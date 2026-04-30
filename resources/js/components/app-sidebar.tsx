@@ -2,6 +2,9 @@ import { Link } from '@inertiajs/react';
 import {
     BookOpen,
     CheckSquare,
+    DollarSign,
+    FileText,
+    Folder,
     FolderGit2,
     LayoutGrid,
     MessageSquare,
@@ -20,8 +23,21 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { attendance, dashboard, testimonials, todo } from '@/routes';
+
+// import OfferingsMain from '@/pages/offerings/main';
+// import OfferingsMiscellaneous from '@/pages/offerings/miscellaneous';
+// import OfferingsReports from '@/pages/offerings/reports';
+import {
+    attendance,
+    dashboard,
+    offeringsMain,
+    offeringsMiscellaneous,
+    offeringsReports,
+    testimonials,
+    todo,
+} from '@/routes';
 import type { NavItem } from '@/types';
+
 
 const mainNavItems: NavItem[] = [
     {
@@ -43,6 +59,20 @@ const mainNavItems: NavItem[] = [
         title: 'Todo',
         href: todo(),
         icon: CheckSquare,
+    },
+    {
+        title: 'Offerings',
+        href: offeringsMain(),
+        icon: DollarSign,
+        items: [
+            { title: 'Main', href: offeringsMain(), icon: Folder },
+            {
+                title: 'Miscellaneous',
+                href: offeringsMiscellaneous(),
+                icon: Folder,
+            },
+            { title: 'Reports', href: offeringsReports(), icon: FileText },
+        ],
     },
 ];
 
